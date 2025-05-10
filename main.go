@@ -31,7 +31,7 @@ func main() {
 
 	addrs, err := net.InterfaceAddrs()
     if err != nil {
-        panic(err)
+        log.Fatal(err)
     }
     for _, addr := range addrs {
         ipNet, ok := addr.(*net.IPNet)
