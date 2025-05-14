@@ -1,5 +1,7 @@
 package main
 
+// why
+
 import (
 	"fmt"
 	"log"
@@ -58,7 +60,6 @@ func main() {
 					if err != nil {
 						log.Fatal(err)
 					}
-
 					cmd := exec.Command("git", "init", "--bare", bare_repo)
 					err1 := cmd.Run()
 					if err1 != nil {
@@ -81,7 +82,6 @@ func main() {
 				PG_CLONEDIR := fmt.Sprintf("/home/%s/Git/", uname)
 				for _, repo := range args[2:] {
 					_, err := os.Stat(fmt.Sprintf("%s%s/%s.git", PG_CLONEDIR, repo, repo))
-
 					if os.IsExist(err) != false {
 						fmt.Printf("%s does not exist or not a repository.", repo)
 					} else {
